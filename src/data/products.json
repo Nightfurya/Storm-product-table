@@ -1,80 +1,90 @@
 [
 	{
 		"id": 1374,
-		"product": "Macbook Pro 16 inch (2020 ) For Sale",
+		"name": "Macbook Pro 16 inch (2020 ) For Sale",
 		"serial": "BA9212320",
+		"status": "Status",
 		"quantity": 122,
-		"total": 854.08,
+		"price": 854.08,
 		"image": "https://superapple.cz/wp-content/uploads/2019/11/Apple_16-inch-MacBook-Pro_111319-800x445.jpg"
 	},
 	{
 		"id": 3933,
-		"product": "Gaming Chair, local pickup only",
+		"name": "Gaming Chair, local pickup only",
 		"serial": "XP8619376",
+		"status": "Status",
 		"quantity": 245,
-		"total": 943.65
+		"price": 943.65
 	},
 	{
 		"id": 9374,
-		"product": "Macbook Air 13 inch(2020 ) For Sale",
+		"name": "Macbook Air 13 inch(2020 ) For Sale",
 		"serial": "KH9212924",
+		"status": "Status",
 		"quantity": 134,
-		"total": 779.58,
+		"price": 779.58,
 		"image": "https://images.iphonemod.net/wp-content/uploads/2020/03/apple-released-new-macbook-air-13-inch-2020-2-1024x828.png"
 	},
 	{
 		"id": 5560,
-		"product": "Heimer Miller Sofa (Mint Condition)",
+		"name": "Heimer Miller Sofa (Mint Condition)",
 		"serial": "SD9212969",
+		"status": "Status",
 		"quantity": 26,
-		"total": 275.43,
+		"price": 275.43,
 		"image": "https://www.pngall.com/wp-content/uploads/4/Sofa-PNG.png"
 	},
 	{
 		"id": 6065,
-		"product": "iPad Pro 2017 Model",
+		"name": "iPad Pro 2017 Model",
 		"serial": "012921097",
+		"status": "Status",
 		"quantity": 76,
-		"total": 475.22,
+		"price": 475.22,
 		"image": "https://brain-images-ssl.cdn.dixons.com/6/3/10165836/l_10165836_002.jpg"
 	},
 	{
 		"id": 4349,
-		"product": "Gopro hero 7 (with receipt)",
+		"name": "Gopro hero 7 (with receipt)",
 		"serial": "GM6812978",
+		"status": "Status",
 		"quantity": 47,
-		"total": 219.78,
+		"price": 219.78,
 		"image": "https://gadgetsin.com/uploads/2018/10/gopro_hero7_black_waterproof_4k_action_camera_1.jpg"
 	},
 	{
 		"id": 9359,
-		"product": "Dell Computer Monitor",
+		"name": "Dell Computer Monitor",
 		"serial": "HQ0192837",
+		"status": "Status",
 		"quantity": 54,
-		"total": 105.55,
+		"price": 105.55,
 		"image": "https://www.techpowerup.com/img/08-09-27/320-7339.jpg"
 	},
 	{
 		"id": 8829,
-		"product": "AirPods Pro",
+		"name": "AirPods Pro",
 		"serial": "LK89471045",
+		"status": "Status",
 		"quantity": 132,
-		"total": 928.41,
+		"price": 928.41,
 		"image": "https://scoprilamela.it/wp-content/uploads/2020/09/airpods-pro.jpg"
 	},
 	{
 		"id": 5045,
-		"product": "Playstation 4 Limited Edition",
+		"name": "Playstation 4 Limited Edition",
 		"serial": "TU23182451",
+		"status": "Status",
 		"quantity": 15,
-		"total": 473.85
+		"price": 473.85
 	},
 	{
 		"id": 3536,
-		"product": "DJI Mavic Pro 2",
+		"name": "DJI Mavic Pro 2",
 		"serial": "JD45712035",
+		"status": "Status",
 		"quantity": 39,
-		"total": 576.28,
+		"price": 576.28,
 		"image": "https://images.wired.it/wp-content/uploads/2016/09/28193850/1475077129_Dji-Mavic-Pro-.jpg"
 	}
 ]

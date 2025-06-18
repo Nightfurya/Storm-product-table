@@ -1,0 +1,26 @@
+$default-font-family: 'Nunito Sans', sans-serif;
+
+@mixin font-style(
+  $font-size,
+  $color,
+  $font-weight: 400,
+  $font-family: $default-font-family
+) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: $font-weight;
+  font-family: $font-family;
+}
+
+@mixin flex-row($align-items: center, $justify-content: center) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin flex-column($align-items: center, $justify-content: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}

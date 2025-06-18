@@ -1,0 +1,27 @@
+{
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+
+	"arrowParens": "avoid",
+	"singleQuote": true,
+	"semi": true,
+
+	"trailingComma": "all",
+
+	"endOfLine": "lf",
+
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+	"importOrder": [
+		"^vue",
+		"^pinia",
+		"<THIRD_PARTY_MODULES>",
+		"^@/components/(.*)$",
+		"^@/composables/(.*)$",
+		"^@/data/(.*)$",
+		"^@/assets/(.*)$",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

@@ -10,6 +10,8 @@
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
+
+		"allowImportingTsExtensions": false,
 		"noEmit": false,
 		"composite": true
 	},

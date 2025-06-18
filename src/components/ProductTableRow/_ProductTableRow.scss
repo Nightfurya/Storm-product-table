@@ -1,0 +1,37 @@
+@use '@/assets/styles/_color.vars' as colors;
+@use '@/assets/styles/_mixins' as mixins;
+
+.product-table {
+	&__row {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 70px 144px 125px 1fr 171px;
+		height: 56px;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid colors.$moon;
+		}
+
+		&-sell {
+			@include mixins.flex-row();
+			@include mixins.font-style(14px, colors.$primary-color);
+
+			padding: 18px 16px;
+
+			line-height: 20px;
+			letter-spacing: 0;
+			vertical-align: middle;
+		}
+
+		&-sell:nth-child(4) {
+			padding: 8px 16px;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&-sell:last-child {
+			border-left: 1px solid colors.$moon;
+			justify-content: flex-end;
+		}
+	}
+}

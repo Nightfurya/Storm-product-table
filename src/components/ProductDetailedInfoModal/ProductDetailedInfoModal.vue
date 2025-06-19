@@ -181,7 +181,7 @@ defineEmits(['close']);
 			background-color: colors.$alabaster;
 
 			line-height: 20px;
-			letter-spacing: 2%;
+			letter-spacing: 0.02em;
 			vertical-align: middle;
 
 			&:hover {

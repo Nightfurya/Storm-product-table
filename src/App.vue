@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
 
+import AppHeader from '@/components/AppHeader/AppHeader.vue';
 import ProductDetailedInfoModal from '@/components/ProductDetailedInfoModal/ProductDetailedInfoModal.vue';
 import ProductTable from '@/components/ProductTable.vue';
 
@@ -22,6 +23,7 @@ function productDetailedInfoModalCloseHandler() {
 </script>
 
 <template>
+	<AppHeader />
 	<main>
 		<h1>Products</h1>
 		<ProductTable :products="products" @select="selectedProduct = $event" />

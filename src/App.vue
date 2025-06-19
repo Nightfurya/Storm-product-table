@@ -29,3 +29,9 @@ function productDetailedInfoModalCloseHandler() {
 
 	<ProductDetailedInfoModal :selectedProduct="selectedProduct" @close="productDetailedInfoModalCloseHandler" />
 </template>
+
+<style scoped lang="scss">
+main {
+	width: 100%;
+}
+</style>

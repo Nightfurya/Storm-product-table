@@ -1,7 +1,14 @@
 [
 	{
 		"id": 1374,
-		"name": "Macbook Pro 16 inch (2020 ) For Sale",
+		"name": "Macbook Pro 16 inch (2020) For Sale",
+		"keyFeatures": [
+			"2.6 GHz Intel Core i7 6-Core (9th Gen)",
+			"16GB of 2666 MHz DDR4 RAM | 8TB SSD",
+			"16\" 3072 x 1920 Retina Display",
+			"AMD Radeon Pro 5600M GPU (8GB HBM2)"
+		],
+		"description": "The Apple 16\" MacBook Pro features a 16\" Retina Display, a Magic Keyboard with a redesigned scissor mechanism, a six-speaker high-fidelity sound system, and an advanced thermal design. This MacBook Pro also features an AMD Radeon Pro 5600M graphics card, a 7nm mobile discrete GPU designed for pro users. With 8GB of HBM2",
 		"serial": "BA9212320",
 		"status": "Status",
 		"quantity": 122,
@@ -11,6 +18,8 @@
 	{
 		"id": 3933,
 		"name": "Gaming Chair, local pickup only",
+		"keyFeatures": ["High-density foam seat", "Adjustable armrests", "Steel frame construction", "Faux leather finish"],
+		"description": "This ergonomic gaming chair offers long-session comfort with high-density foam and adjustable lumbar support. Built on a durable steel frame and finished in premium faux leather, it provides both style and support for gaming or office use.",
 		"serial": "XP8619376",
 		"status": "Status",
 		"quantity": 245,
@@ -18,7 +27,9 @@
 	},
 	{
 		"id": 9374,
-		"name": "Macbook Air 13 inch(2020 ) For Sale",
+		"name": "Macbook Air 13 inch(2020) For Sale",
+		"keyFeatures": ["Apple M1 chip", "8GB unified memory", "512GB SSD", "Retina Display with True Tone"],
+		"description": "The 2020 MacBook Air is powered by Apple`s M1 chip, delivering incredible performance and battery life. Its 13\" Retina display features True Tone technology for natural color viewing, making it ideal for work, study, or light creative tasks.",
 		"serial": "KH9212924",
 		"status": "Status",
 		"quantity": 134,
@@ -28,6 +39,8 @@
 	{
 		"id": 5560,
 		"name": "Heimer Miller Sofa (Mint Condition)",
+		"keyFeatures": ["3-seater premium design", "Soft grey fabric", "Solid wood frame", "Minimalist Scandinavian look"],
+		"description": "This Heimer Miller sofa blends minimalist aesthetics with durable comfort. Upholstered in soft grey fabric and supported by a solid wood frame, it fits effortlessly in modern living spaces and is ideal for lounging or entertaining guests.",
 		"serial": "SD9212969",
 		"status": "Status",
 		"quantity": 26,
@@ -37,6 +50,8 @@
 	{
 		"id": 6065,
 		"name": "iPad Pro 2017 Model",
+		"keyFeatures": ["10.5\" Retina Display", "A10X Fusion chip", "256GB storage", "Apple Pencil support"],
+		"description": "The iPad Pro 2017 delivers a smooth multitasking experience with its A10X Fusion chip and vibrant 10.5\" Retina Display. Whether drawing with Apple Pencil or streaming high-res content, this tablet balances power and portability.",
 		"serial": "012921097",
 		"status": "Status",
 		"quantity": 76,
@@ -46,6 +61,8 @@
 	{
 		"id": 4349,
 		"name": "Gopro hero 7 (with receipt)",
+		"keyFeatures": ["4K60 video recording", "HyperSmooth stabilization", "Waterproof up to 10m", "Voice control"],
+		"description": "The GoPro Hero 7 captures ultra-smooth 4K footage with built-in stabilization and is waterproof without a case. Its compact design, voice control, and touch screen make it perfect for vlogging, travel, and action-packed moments.",
 		"serial": "GM6812978",
 		"status": "Status",
 		"quantity": 47,
@@ -55,6 +72,8 @@
 	{
 		"id": 9359,
 		"name": "Dell Computer Monitor",
+		"keyFeatures": ["27\" Full HD display", "IPS panel", "75Hz refresh rate", "HDMI & DisplayPort inputs"],
+		"description": "This 27\" Dell monitor delivers crisp visuals with consistent colors thanks to its IPS panel. Ideal for work or casual gaming, it supports HDMI and DisplayPort connections and includes a sleek, adjustable stand.",
 		"serial": "HQ0192837",
 		"status": "Status",
 		"quantity": 54,
@@ -64,6 +83,8 @@
 	{
 		"id": 8829,
 		"name": "AirPods Pro",
+		"keyFeatures": ["Active Noise Cancellation", "Adaptive EQ", "Wireless charging case", "Sweat & water resistant"],
+		"description": "Apple’s AirPods Pro offer immersive audio with Active Noise Cancellation and Adaptive EQ for a personalized experience. With a comfortable in-ear fit and water resistance, they`re perfect for everyday listening and workouts.",
 		"serial": "LK89471045",
 		"status": "Status",
 		"quantity": 132,
@@ -73,6 +94,8 @@
 	{
 		"id": 5045,
 		"name": "Playstation 4 Limited Edition",
+		"keyFeatures": ["1TB storage", "DualShock 4 controller", "4K streaming support", "Collector`s case design"],
+		"description": "This limited edition PS4 features custom aesthetics and a matching controller, making it a collector`s favorite. With 1TB of storage, it supports 4K media streaming and delivers high-performance gaming out of the box.",
 		"serial": "TU23182451",
 		"status": "Status",
 		"quantity": 15,
@@ -81,6 +104,8 @@
 	{
 		"id": 3536,
 		"name": "DJI Mavic Pro 2",
+		"keyFeatures": ["1\" Hasselblad CMOS sensor", "4K/30fps video", "31-min flight time", "8km transmission range"],
+		"description": "The DJI Mavic Pro 2 is built for aerial photography with a Hasselblad 1\" sensor and 4K video capture. Its compact design, long battery life, and obstacle avoidance make it a top choice for drone enthusiasts and professionals.",
 		"serial": "JD45712035",
 		"status": "Status",
 		"quantity": 39,

@@ -16,6 +16,7 @@
 		"^vue",
 		"^pinia",
 		"<THIRD_PARTY_MODULES>",
+		"^@/shared/(.*)$",
 		"^@/components/(.*)$",
 		"^@/composables/(.*)$",
 		"^@/data-models/(.*)$",

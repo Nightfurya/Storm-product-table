@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue';
-
 import type { Product } from '@/data-models/product';
 
 import ProductTableRow from './ProductTableRow/ProductTableRow.vue';
@@ -20,7 +18,12 @@ defineProps<{
 			<div class="product-table__row-sell">Prices</div>
 		</div>
 
-		<ProductTableRow v-for="product in products" :key="product.id" :product="product" />
+		<ProductTableRow
+			v-for="product in products"
+			:key="product.id"
+			:product="product"
+			@select="$emit('select', product)"
+		/>
 	</div>
 </template>
 
@@ -51,6 +54,7 @@ defineProps<{
 
 			&:nth-child(4),
 			&:last-child {
+				align-items: center;
 				justify-content: center;
 			}
 		}

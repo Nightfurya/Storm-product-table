@@ -4,10 +4,11 @@ import type { Product } from '@/data-models/product';
 defineProps<{
 	product: Product;
 }>();
+defineEmits(['select']);
 </script>
 
 <template>
-	<div class="product-table__row">
+	<div class="product-table__row" @click="$emit('select', product)">
 		<div class="product-table__row-sell">{{ product.id }}</div>
 		<div class="product-table__row-sell">{{ product.status }}</div>
 		<div class="product-table__row-sell">{{ product.quantity }}</div>

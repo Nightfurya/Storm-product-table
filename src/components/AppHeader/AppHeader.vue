@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+defineProps<{
+	modelValue: string;
+}>();
+
+const emit = defineEmits<{
+	(e: 'update:modelValue', value: string): void;
+	(e: 'applySearch'): void;
+}>();
+</script>
+
 <template>
 	<header class="app-header">
 		<div class="app-header__title">
@@ -8,11 +19,18 @@
 		<div class="app-header__actions">
 			<div class="app-header__search">
 				<div class="app-header__input-wrapper">
-					<input class="search-control" type="text" placeholder="Search" />
+					<input
+						id="header-search-input"
+						class="search-control"
+						type="text"
+						placeholder="Search"
+						:value="modelValue"
+						@input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+					/>
 					<img class="search-icon" src="../../assets/icons/search-icon.svg" alt="search-icon" />
 				</div>
 
-				<button class="app-header__search-button" aria-label="Search">Search</button>
+				<button class="app-header__search-button" aria-label="Search" @click="$emit('applySearch')">Search</button>
 			</div>
 
 			<div class="app-header__icons">

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 import AppHeader from '@/components/AppHeader/AppHeader.vue';
 import ProductDetailedInfoModal from '@/components/ProductDetailedInfoModal/ProductDetailedInfoModal.vue';
-import ProductTable from '@/components/ProductTable.vue';
+import ProductTable from '@/components/ProductTable/ProductTable.vue';
+import ProductTablePagination from '@/components/ProductTable/ProductTablePagination/ProductTablePagination.vue';
 
 import type { Product } from '@/data-models/product';
 
@@ -17,19 +18,31 @@ onMounted(() => {
 
 const selectedProduct = ref<Product | null>(null);
 
-function productDetailedInfoModalCloseHandler() {
-	selectedProduct.value = null;
+const searchInputValue = ref<string>('');
+const confirmedSearchInputValue = ref<string>('');
+
+const filteredProducts = computed((): Product[] =>
+	products.value.filter(({ name, serial }) => {
+		const searchValue = confirmedSearchInputValue.value.toLowerCase();
+
+		return name.toLowerCase().includes(searchValue) || serial.toLowerCase().includes(searchValue);
+	}),
+);
+
+function applySearch(): void {
+	confirmedSearchInputValue.value = searchInputValue.value;
 }
 </script>
 
 <template>
-	<AppHeader />
+	<AppHeader v-model="searchInputValue" @applySearch="applySearch" />
+
 	<main>
-		<h1>Products</h1>
-		<ProductTable :products="products" @select="selectedProduct = $event" />
+		<ProductTablePagination :shownRows="filteredProducts.length" :totalRows="products.length" />
+		<ProductTable :products="filteredProducts" @select="selectedProduct = $event" />
 	</main>
 
-	<ProductDetailedInfoModal :selectedProduct="selectedProduct" @close="productDetailedInfoModalCloseHandler" />
+	<ProductDetailedInfoModal :selectedProduct="selectedProduct" @close="selectedProduct = null" />
 </template>
 
 <style scoped lang="scss">

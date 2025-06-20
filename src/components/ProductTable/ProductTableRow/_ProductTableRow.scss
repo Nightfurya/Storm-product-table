@@ -8,6 +8,10 @@
 		grid-template-columns: 70px 144px 125px 1fr 171px;
 		height: 56px;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&:not(:last-child) {
 			border-bottom: 1px solid colors.$moon;
 		}

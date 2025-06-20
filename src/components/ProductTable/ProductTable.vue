@@ -1,10 +1,18 @@
 <script lang="ts" setup>
+import type { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
 
 import ProductTableRow from './ProductTableRow/ProductTableRow.vue';
 
 defineProps<{
 	products: Product[];
+	sortKey: ProductSortingOption | null;
+	sortOrder: SortOrder;
+}>();
+
+const emit = defineEmits<{
+	(e: 'sort', key: string): void;
+	(e: 'select', selectedProduct: Product): void;
 }>();
 </script>
 
@@ -13,16 +21,16 @@ defineProps<{
 		<div class="product-table__row product-table__header">
 			<div class="product-table__row-sell">id</div>
 			<div class="product-table__row-sell">Status</div>
-			<div class="product-table__row-sell">Quantity</div>
-			<div class="product-table__row-sell">Product name</div>
-			<div class="product-table__row-sell">Prices</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'quantity')">Quantity</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'name')">Product name</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'price')">Prices</div>
 		</div>
 
 		<ProductTableRow
 			v-for="product in products"
 			:key="product.id"
 			:product="product"
-			@select="$emit('select', product)"
+			@select="emit('select', product)"
 		/>
 	</div>
 </template>
@@ -37,23 +45,22 @@ defineProps<{
 
 	width: 100%;
 	border: 1px solid colors.$moon;
-	border-radius: 16px;
+	border-radius: 8px;
 
 	&__row.product-table__header {
-		&:hover {
-			cursor: pointer;
-		}
-
 		.product-table__row-sell {
 			@include mixins.font-style(16px, colors.$primary-color, 700);
+
+			&:nth-child(-n + 2):hover {
+				cursor: default;
+			}
 
 			&:first-child {
 				justify-content: flex-start;
 				text-transform: uppercase;
 			}
 
-			&:nth-child(4),
-			&:last-child {
+			&:nth-child(n + 4):nth-child(-n + 5) {
 				align-items: center;
 				justify-content: center;
 			}

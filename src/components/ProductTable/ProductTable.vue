@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProductSortingOption, SortOrder } from '@/data-models/enums';
+import { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
 
 import ProductTableRow from './ProductTableRow/ProductTableRow.vue';
@@ -19,11 +19,42 @@ const emit = defineEmits<{
 <template>
 	<div class="product-table">
 		<div class="product-table__row product-table__header">
-			<div class="product-table__row-sell">id</div>
-			<div class="product-table__row-sell">Status</div>
-			<div class="product-table__row-sell" @click="emit('sort', 'quantity')">Quantity</div>
-			<div class="product-table__row-sell" @click="emit('sort', 'name')">Product name</div>
-			<div class="product-table__row-sell" @click="emit('sort', 'price')">Prices</div>
+			<div class="product-table__row-sell">
+				<p>id</p>
+			</div>
+			<div class="product-table__row-sell">
+				<p>Status</p>
+			</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'quantity')">
+				<p>Quantity</p>
+
+				<img
+					v-if="sortKey === ProductSortingOption.QUANTITY && sortOrder !== SortOrder.DEFAULT"
+					class="product-table__row-sell-sort-icon"
+					:class="{ 'narrow-cell': true, 'descending-order': sortOrder === SortOrder.DESC }"
+					src="@/assets/icons/arrow-down.svg"
+				/>
+			</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'name')">
+				<p>Product name</p>
+
+				<img
+					v-if="sortKey === ProductSortingOption.NAME && sortOrder !== SortOrder.DEFAULT"
+					class="product-table__row-sell-sort-icon"
+					:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
+					src="@/assets/icons/arrow-down.svg"
+				/>
+			</div>
+			<div class="product-table__row-sell" @click="emit('sort', 'price')">
+				<p>Prices</p>
+
+				<img
+					v-if="sortKey === ProductSortingOption.PRICE && sortOrder !== SortOrder.DEFAULT"
+					class="product-table__row-sell-sort-icon"
+					:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
+					src="@/assets/icons/arrow-down.svg"
+				/>
+			</div>
 		</div>
 
 		<ProductTableRow
@@ -51,6 +82,8 @@ const emit = defineEmits<{
 		.product-table__row-sell {
 			@include mixins.font-style(16px, colors.$primary-color, 700);
 
+			position: relative;
+
 			&:nth-child(-n + 2):hover {
 				cursor: default;
 			}
@@ -63,6 +96,24 @@ const emit = defineEmits<{
 			&:nth-child(n + 4):nth-child(-n + 5) {
 				align-items: center;
 				justify-content: center;
+			}
+
+			&-sort-icon {
+				width: 20px;
+				height: 20px;
+				transition: transform 0.3s ease;
+
+				position: absolute;
+				top: 18px;
+				right: 16px;
+
+				&.narrow-cell {
+					right: 8px;
+				}
+
+				&.descending-order {
+					transform: rotate(180deg);
+				}
 			}
 		}
 	}

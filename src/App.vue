@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref } from 'vue';
 
+import { useFetch } from '@/api/useFetch';
+
 import AppHeader from '@/components/AppHeader/AppHeader.vue';
 import ProductDetailedInfoModal from '@/components/ProductDetailedInfoModal/ProductDetailedInfoModal.vue';
 import ProductTable from '@/components/ProductTable/ProductTable.vue';
@@ -9,12 +11,11 @@ import ProductTablePagination from '@/components/ProductTable/ProductTablePagina
 import { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
 
-import productsData from '@/data/products.json';
-
-const products = ref<Product[]>([]);
+// const { data: productsList, isLoading, fetchData } = useFetch('https://jsonplaceholder.typicode.com/todos/1');
+const { data: fetchedProductsList, isLoading, fetchData: fetchProductsList } = useFetch<Product[]>();
 
 onMounted(() => {
-	products.value = productsData;
+	fetchProductsList();
 });
 
 const sortKey = ref<ProductSortingOption | null>(null);
@@ -26,7 +27,7 @@ const searchInputValue = ref<string>('');
 const confirmedSearchInputValue = ref<string>('');
 
 const filteredAndSortedProductsList = computed((): Product[] => {
-	let productsList: Product[] = [...products.value];
+	let productsList: Product[] = [...fetchedProductsList.value];
 
 	if (confirmedSearchInputValue.value.length) {
 		productsList = productsList.filter(({ name, serial }) => {
@@ -87,8 +88,10 @@ function sortHandler(key: ProductSortingOption) {
 <template>
 	<AppHeader v-model="searchInputValue" @applySearch="applySearch" />
 
-	<main>
-		<ProductTablePagination :shownRows="filteredAndSortedProductsList.length" :totalRows="products.length" />
+	<div v-if="isLoading" class="loader"><p>Data is loading... Considering adding fancy spinner :D</p></div>
+
+	<main v-if="!isLoading">
+		<ProductTablePagination :shownRows="filteredAndSortedProductsList.length" :totalRows="fetchedProductsList.length" />
 		<ProductTable
 			:products="filteredAndSortedProductsList"
 			:sortKey="sortKey"
@@ -104,5 +107,9 @@ function sortHandler(key: ProductSortingOption) {
 <style scoped lang="scss">
 main {
 	width: 100%;
+}
+
+.loader {
+	text-align: center;
 }
 </style>

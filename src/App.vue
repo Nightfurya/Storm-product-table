@@ -5,8 +5,8 @@ import { useFetch } from '@/api/useFetch';
 
 import AppHeader from '@/components/AppHeader/AppHeader.vue';
 import ProductDetailedInfoModal from '@/components/ProductDetailedInfoModal/ProductDetailedInfoModal.vue';
+import Pagination from '@/components/ProductTable/Pagination/Pagination.vue';
 import ProductTable from '@/components/ProductTable/ProductTable.vue';
-import ProductTablePagination from '@/components/ProductTable/ProductTablePagination/ProductTablePagination.vue';
 
 import { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
@@ -91,7 +91,7 @@ function sortHandler(key: ProductSortingOption) {
 	<div v-if="isLoading" class="loader"><p>Data is loading... Considering adding fancy spinner :D</p></div>
 
 	<main v-if="!isLoading">
-		<ProductTablePagination :shownRows="filteredAndSortedProductsList.length" :totalRows="fetchedProductsList.length" />
+		<Pagination :shownRows="filteredAndSortedProductsList.length" :totalRows="fetchedProductsList.length" />
 		<ProductTable
 			:products="filteredAndSortedProductsList"
 			:sortKey="sortKey"

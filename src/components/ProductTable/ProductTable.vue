@@ -2,7 +2,7 @@
 import { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
 
-import ProductTableRow from './ProductTableRow/ProductTableRow.vue';
+import Row from './Row/Row.vue';
 
 defineProps<{
 	products: Product[];
@@ -57,19 +57,14 @@ const emit = defineEmits<{
 			</div>
 		</div>
 
-		<ProductTableRow
-			v-for="product in products"
-			:key="product.id"
-			:product="product"
-			@select="emit('select', product)"
-		/>
+		<Row v-for="product in products" :key="product.id" :product="product" @select="emit('select', product)" />
 	</div>
 </template>
 
 <style scoped lang="scss">
 @use '@/assets/styles/_color.vars' as colors;
 @use '@/assets/styles/_mixins' as mixins;
-@use './ProductTableRow/_ProductTableRow';
+@use './Row/_Row';
 
 .product-table {
 	@include mixins.flex-column();

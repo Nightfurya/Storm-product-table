@@ -30,7 +30,7 @@ const emit = defineEmits<{
 <style scoped lang="scss">
 @use '@/assets/styles/_color.vars' as colors;
 @use '@/assets/styles/_mixins' as mixins;
-@use './_ProductTableRow';
+@use './_Row';
 
 .product-table__row-sell {
 	&.padding--small {

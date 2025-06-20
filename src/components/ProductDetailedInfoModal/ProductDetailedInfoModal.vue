@@ -8,7 +8,9 @@ defineProps<{
 	selectedProduct: Product | null;
 }>();
 
-defineEmits(['close']);
+const emit = defineEmits<{
+	(e: 'close'): void;
+}>();
 </script>
 
 <template>
@@ -16,7 +18,7 @@ defineEmits(['close']);
 		<template v-slot:[ModalPart.HEADER]>
 			<div class="product-modal__header">
 				<h6 class="product-modal__header-title">{{ selectedProduct.name }}</h6>
-				<button class="product-modal__header-close-button" @click="$emit('close')" aria-label="Top control Close modal">
+				<button class="product-modal__header-close-button" @click="emit('close')" aria-label="Top control Close modal">
 					<img src="@/assets/icons/x-close.svg" alt="Close" />
 				</button>
 			</div>
@@ -41,7 +43,7 @@ defineEmits(['close']);
 			<div class="product-modal__footer">
 				<button
 					class="product-modal__footer-close-button"
-					@click="$emit('close')"
+					@click="emit('close')"
 					aria-label="Bottom control Close modal"
 				>
 					Close

@@ -30,7 +30,7 @@ const emit = defineEmits<{
 					<img class="search-icon" src="../../assets/icons/search-icon.svg" alt="search-icon" />
 				</div>
 
-				<button class="app-header__search-button" aria-label="Search" @click="$emit('applySearch')">Search</button>
+				<button class="app-header__search-button" aria-label="Search" @click="emit('applySearch')">Search</button>
 			</div>
 
 			<div class="app-header__icons">

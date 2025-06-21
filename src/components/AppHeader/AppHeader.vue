@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 defineProps<{
 	modelValue: string;
 }>();
@@ -7,6 +9,8 @@ const emit = defineEmits<{
 	(e: 'update:modelValue', value: string): void;
 	(e: 'applySearch'): void;
 }>();
+
+const isBurgerMenuOpen = ref<boolean>(false);
 </script>
 
 <template>
@@ -50,6 +54,34 @@ const emit = defineEmits<{
 				</div>
 			</div>
 		</div>
+
+		<div class="burger-menu__container">
+			<img
+				class="burger-menu__icon"
+				src="@/assets/icons/burger-menu.svg"
+				alt="burger-menu-icon"
+				@click="isBurgerMenuOpen = !isBurgerMenuOpen"
+			/>
+
+			<div class="burger-menu" v-show="isBurgerMenuOpen">
+				<div class="app-header__icons">
+					<button aria-label="Settings">
+						<img class="app-header__icons-control" src="../../assets/icons/settings-icon.svg" alt="settings-icon" />
+					</button>
+					<button aria-label="Notifications">
+						<img
+							class="app-header__icons-control"
+							src="../../assets/icons/notifications-icon.svg"
+							alt="notifications-icon"
+						/>
+					</button>
+					<div class="app-header__profile">
+						<img class="app-header__icons-control" src="../../assets/icons/user.svg" alt="user-icon" />
+						<span class="app-header__profile-name">Adriana Arias</span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header>
 </template>
 
@@ -59,6 +91,8 @@ const emit = defineEmits<{
 
 .app-header {
 	@include mixins.flex-row(center, space-between);
+
+	flex-wrap: wrap;
 	margin: 80px 0 76px;
 
 	&__title {
@@ -83,13 +117,41 @@ const emit = defineEmits<{
 
 		.app-header__search {
 			display: flex;
-			margin-right: 30px;
+			margin: 0 30px;
+
+			@media (max-width: 930px) {
+				margin: 0 16px;
+			}
+
+			@media (min-width: 769px) and (max-width: 902px) {
+				margin-left: 0;
+			}
+
+			@media (max-width: 684px) {
+				margin: 0 4px;
+				width: 100%;
+			}
+
+			@media (max-width: 652px) {
+				margin: 0;
+				width: 100%;
+			}
+
+			@media (max-width: 480px) {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			@media (max-width: 420px) {
+				margin: 0;
+				width: 100%;
+			}
 
 			.app-header__input-wrapper {
 				position: relative;
 
 				.search-control {
-					@include mixins.font-style(14px, rgba(colors.$black, 0.87), 400, 'Inter');
+					@include mixins.font-style(0.875rem, rgba(colors.$black, 0.87), $font-family: 'Inter');
 
 					position: relative;
 					width: 260px;
@@ -100,10 +162,17 @@ const emit = defineEmits<{
 					margin-right: 16px;
 
 					&::placeholder {
-						@include mixins.font-style(14px, rgba(colors.$black, 0.3), 400, 'Inter');
+						@include mixins.font-style(0.875rem, rgba(colors.$black, 0.3), $font-family: 'Inter');
+					}
 
-						line-height: 20px;
-						letter-spacing: 0%;
+					@media (max-width: 420px) {
+						width: 220px;
+					}
+
+					@media (max-width: 368px) {
+						width: 180px;
+						padding-left: 40px;
+						margin-right: 8px;
 					}
 				}
 
@@ -113,11 +182,18 @@ const emit = defineEmits<{
 					height: 24px;
 					top: 10px;
 					left: 16px;
+
+					@media (max-width: 368px) {
+						width: 16px;
+						height: 16px;
+						top: 14px;
+						left: 12px;
+					}
 				}
 			}
 
 			&-button {
-				@include mixins.font-style(14px, rgba(colors.$snow, 0.87), 500, 'Inter');
+				@include mixins.font-style(0.875rem, rgba(colors.$snow, 0.87), 500, 'Inter', $letter-spacing: 0.02em);
 
 				width: 97px;
 				height: 44px;
@@ -126,51 +202,112 @@ const emit = defineEmits<{
 				border-radius: 4px;
 				background-color: colors.$maim;
 
-				line-height: 20px;
-				letter-spacing: 0.02em;
-				vertical-align: middle;
-
 				&:hover {
 					cursor: pointer;
 				}
 			}
 		}
 
-		.app-header__icons {
-			display: flex;
-			align-items: center;
-
-			button {
-				height: 44px;
-				margin-right: 8px;
-				padding: 0;
-				background: none;
-				border: none;
-				cursor: pointer;
-			}
-
-			&-control {
-				width: 44px;
-				height: 44px;
-			}
+		@media (min-width: 769px) and (max-width: 902px) {
+			margin-top: 16px;
+			width: 100%;
 		}
 
-		.app-header__profile {
-			display: flex;
-			align-items: center;
+		@media (max-width: 660px) {
+			order: 1;
+			margin-top: 16px;
+		}
+
+		@media (max-width: 480px) {
+			width: 100%;
+		}
+	}
+
+	.app-header__icons {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+
+		button {
+			height: 44px;
+			margin-right: 8px;
+			padding: 0;
+			background: none;
+			border: none;
+			cursor: pointer;
+		}
+
+		&-control {
+			width: 44px;
+			height: 44px;
+		}
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	.app-header__profile {
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&-name {
+			@include mixins.font-style(0.875rem, colors.$maim, $font-family: 'Inter', $letter-spacing: 0.02em);
+		}
+	}
+
+	.burger-menu__container {
+		display: none;
+
+		$burger-menu-icon-height: 24px;
+
+		position: relative;
+		width: 24px;
+		height: $burger-menu-icon-height;
+
+		@media (max-width: 768px) {
+			display: block;
+		}
+
+		.burger-menu__icon {
+			width: 100%;
+			height: 100%;
 
 			&:hover {
 				cursor: pointer;
 			}
+		}
 
-			&-name {
-				@include mixins.font-style(14px, colors.$maim, 400, 'Inter');
+		.burger-menu {
+			position: absolute;
+			z-index: 1;
+			top: $burger-menu-icon-height + 4px;
+			right: 0;
 
-				line-height: 20px;
-				letter-spacing: 0.02em;
-				vertical-align: middle;
+			width: 160px;
+			height: 132px;
+			border-radius: 8px;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+			background-color: colors.$snow;
+
+			.app-header__icons {
+				@include mixins.flex-column(flex-start, flex-start);
+			}
+
+			.app-header__profile {
+				.app-header__icons-control {
+					margin-right: 8px;
+				}
 			}
 		}
+	}
+
+	@media (max-width: 768px) {
+		margin: 40px 0 38px;
 	}
 }
 </style>

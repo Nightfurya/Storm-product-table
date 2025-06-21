@@ -6,7 +6,6 @@ $default-font-size: 16px;
 :root {
 	--app-container-max-width: 1184px;
 	--app-container-padding: 24px;
-	--app-container-padding--small: calc(var(--app-container-padding) / 2);
 }
 
 * {
@@ -46,8 +45,4 @@ body {
 
 	display: flex;
 	flex-direction: column;
-
-	@media (max-width: 1024px) {
-		padding: 0 var(--app-container-padding--small);
-	}
 }

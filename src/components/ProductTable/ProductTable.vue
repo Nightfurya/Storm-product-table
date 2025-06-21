@@ -35,5 +35,6 @@ const emit = defineEmits<{
 	width: 100%;
 	border: 1px solid colors.$moon;
 	border-radius: 8px;
+	margin-bottom: 40px;
 }
 </style>

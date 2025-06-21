@@ -66,7 +66,7 @@ function tableHeaderSortHandler(key: ProductSortingOption) {
 
 .product-table__row.product-table__header {
 	.product-table__row-sell {
-		@include mixins.font-style(16px, colors.$primary-color, 700);
+		@include mixins.font-style(1rem, colors.$primary-color, 700);
 
 		position: relative;
 

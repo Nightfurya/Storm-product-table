@@ -38,11 +38,7 @@ const emit = defineEmits<{
 	}
 
 	&-subtitle {
-		@include mixins.font-style(12px, colors.$secondary-color);
-
-		line-height: 20px;
-		letter-spacing: 0;
-		vertical-align: middle;
+		@include mixins.font-style(0.75rem, colors.$secondary-color);
 	}
 }
 </style>

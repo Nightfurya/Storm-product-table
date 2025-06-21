@@ -1,10 +1,22 @@
 $default-font-family: 'Nunito Sans', sans-serif;
 
-@mixin font-style($font-size, $color, $font-weight: 400, $font-family: $default-font-family) {
+@mixin font-style(
+	$font-size,
+	$color,
+	$font-weight: 400,
+	$font-family: $default-font-family,
+	$line-height: 1.25rem,
+	$letter-spacing: 0,
+	$vertical-align: middle
+) {
 	font-size: $font-size;
 	color: $color;
 	font-weight: $font-weight;
 	font-family: $font-family;
+
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+	vertical-align: $vertical-align;
 }
 
 @mixin flex-row($align-items: center, $justify-content: center) {

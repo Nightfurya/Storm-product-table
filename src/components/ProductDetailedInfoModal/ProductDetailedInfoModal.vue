@@ -64,14 +64,12 @@ const emit = defineEmits<{
 		width: 100%;
 
 		&-title {
-			@include mixins.font-style(20px, colors.$primary-color, 700);
+			@include mixins.font-style(1.25rem, colors.$primary-color, 700, $line-height: 120%);
 
-			line-height: 120%;
-			letter-spacing: 0;
 			margin: 0;
 
 			@media (max-width: 480px) {
-				font-size: 16px;
+				font-size: 1rem;
 			}
 		}
 
@@ -137,11 +135,7 @@ const emit = defineEmits<{
 			.title,
 			.features-list,
 			.description {
-				@include mixins.font-style(12px, colors.$black, 400);
-
-				line-height: 25px;
-				letter-spacing: 0;
-				vertical-align: middle;
+				@include mixins.font-style(0.75rem, colors.$black, 400, $line-height: 1.5625rem);
 			}
 
 			.title {
@@ -172,7 +166,7 @@ const emit = defineEmits<{
 		width: 100%;
 
 		&-close-button {
-			@include mixins.font-style(14px, colors.$black, 500);
+			@include mixins.font-style(0.875rem, colors.$black, 500, $letter-spacing: 0.02em);
 
 			width: 88px;
 			height: 44px;
@@ -182,17 +176,13 @@ const emit = defineEmits<{
 			border-radius: 4px;
 			background-color: colors.$alabaster;
 
-			line-height: 20px;
-			letter-spacing: 0.02em;
-			vertical-align: middle;
-
 			&:hover {
 				cursor: pointer;
 			}
 
 			@media (max-width: 480px) {
 				width: 100%;
-				font-size: 12px;
+				font-size: 0.75rem;
 			}
 		}
 

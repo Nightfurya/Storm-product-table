@@ -27,12 +27,9 @@ defineProps<{
 	border: none;
 	border-radius: 12px;
 
-	@include mixins.font-style(12px, colors.$secondary-color);
+	@include mixins.font-style(0.75rem, colors.$secondary-color);
 
-	line-height: 20px;
-	letter-spacing: 0;
 	text-align: center;
-	vertical-align: middle;
 
 	&.severity {
 		&--success {

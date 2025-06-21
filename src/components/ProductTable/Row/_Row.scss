@@ -18,13 +18,9 @@
 
 		&-sell {
 			@include mixins.flex-row();
-			@include mixins.font-style(14px, colors.$primary-color);
+			@include mixins.font-style(0.875rem, colors.$primary-color);
 
 			padding: 18px 16px;
-
-			line-height: 20px;
-			letter-spacing: 0;
-			vertical-align: middle;
 		}
 
 		&-sell:nth-child(4) {

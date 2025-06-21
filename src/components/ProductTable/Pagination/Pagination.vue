@@ -22,20 +22,13 @@ defineProps<{
 	margin-bottom: 10px;
 
 	.title {
-		@include mixins.font-style(16px, colors.$primary-color, 700);
-
-		line-height: 20px;
-		letter-spacing: 0;
-		vertical-align: middle;
+		@include mixins.font-style(1rem, colors.$primary-color, 700);
 
 		margin-right: 10px;
 	}
 
 	.rows-counter {
-		@include mixins.font-style(12px, colors.$secondary-color, 400);
-
-		line-height: 20px;
-		letter-spacing: 0;
+		@include mixins.font-style(0.75rem, colors.$secondary-color, 400);
 	}
 }
 </style>

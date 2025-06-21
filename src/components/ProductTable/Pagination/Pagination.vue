@@ -30,5 +30,9 @@ defineProps<{
 	.rows-counter {
 		@include mixins.font-style(0.75rem, colors.$secondary-color, 400);
 	}
+
+	@media (max-width: 480px) {
+		margin-bottom: 24px;
+	}
 }
 </style>

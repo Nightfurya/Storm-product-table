@@ -95,6 +95,14 @@ const isBurgerMenuOpen = ref<boolean>(false);
 	flex-wrap: wrap;
 	margin: 80px 0 76px;
 
+	@media (max-width: 768px) {
+		margin: 40px 0 38px;
+	}
+
+	@media (max-width: 480px) {
+		margin-bottom: 18px;
+	}
+
 	&__title {
 		display: flex;
 		align-items: center;
@@ -102,7 +110,7 @@ const isBurgerMenuOpen = ref<boolean>(false);
 		img:first-child {
 			width: 47px;
 			height: 44px;
-			margin-right: 6px;
+			margin-right: 8px;
 		}
 
 		img:nth-child(2) {
@@ -119,22 +127,21 @@ const isBurgerMenuOpen = ref<boolean>(false);
 			display: flex;
 			margin: 0 30px;
 
-			@media (max-width: 930px) {
+			@media (max-width: 946px) {
 				margin: 0 16px;
 			}
 
-			@media (min-width: 769px) and (max-width: 902px) {
+			@media (min-width: 769px) and (max-width: 918px) {
 				margin-left: 0;
 			}
 
-			@media (max-width: 684px) {
+			@media (max-width: 688px) {
 				margin: 0 4px;
 				width: 100%;
 			}
 
-			@media (max-width: 652px) {
+			@media (max-width: 668px) {
 				margin: 0;
-				width: 100%;
 			}
 
 			@media (max-width: 480px) {
@@ -257,20 +264,25 @@ const isBurgerMenuOpen = ref<boolean>(false);
 
 		&-name {
 			@include mixins.font-style(0.875rem, colors.$maim, $font-family: 'Inter', $letter-spacing: 0.02em);
+
+			width: 108px;
 		}
 	}
 
 	.burger-menu__container {
+		$burger-menu-icon-width: 24px;
+
 		display: none;
-
-		$burger-menu-icon-height: 24px;
-
 		position: relative;
-		width: 24px;
-		height: $burger-menu-icon-height;
+		width: $burger-menu-icon-width;
+		height: $burger-menu-icon-width;
 
 		@media (max-width: 768px) {
 			display: block;
+		}
+
+		@media (max-width: 680px) {
+			margin-left: 6px;
 		}
 
 		.burger-menu__icon {
@@ -285,7 +297,7 @@ const isBurgerMenuOpen = ref<boolean>(false);
 		.burger-menu {
 			position: absolute;
 			z-index: 1;
-			top: $burger-menu-icon-height + 4px;
+			top: $burger-menu-icon-width + 4px;
 			right: 0;
 
 			width: 160px;
@@ -304,10 +316,6 @@ const isBurgerMenuOpen = ref<boolean>(false);
 				}
 			}
 		}
-	}
-
-	@media (max-width: 768px) {
-		margin: 40px 0 38px;
 	}
 }
 </style>

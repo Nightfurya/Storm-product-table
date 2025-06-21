@@ -16,47 +16,45 @@ function tableHeaderSortHandler(key: ProductSortingOption) {
 </script>
 
 <template>
-	<div class="product-table">
-		<div class="product-table__row product-table__header">
-			<div class="product-table__row-sell">
-				<p>id</p>
-			</div>
-			<div class="product-table__row-sell">
-				<p>Status</p>
-			</div>
+	<div class="product-table__row product-table__header">
+		<div class="product-table__row-sell">
+			<p>id</p>
+		</div>
+		<div class="product-table__row-sell">
+			<p>Status</p>
+		</div>
 
-			<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.QUANTITY)">
-				<p>Quantity</p>
+		<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.QUANTITY)">
+			<p>Quantity</p>
 
-				<img
-					v-if="sortKey === ProductSortingOption.QUANTITY && sortOrder !== SortOrder.DEFAULT"
-					class="product-table__row-sell-sort-icon"
-					:class="{ 'narrow-cell': true, 'descending-order': sortOrder === SortOrder.DESC }"
-					src="@/assets/icons/arrow-down.svg"
-				/>
-			</div>
+			<img
+				v-if="sortKey === ProductSortingOption.QUANTITY && sortOrder !== SortOrder.DEFAULT"
+				class="product-table__row-sell-sort-icon"
+				:class="{ 'narrow-cell': true, 'descending-order': sortOrder === SortOrder.DESC }"
+				src="@/assets/icons/arrow-down.svg"
+			/>
+		</div>
 
-			<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.NAME)">
-				<p>Product name</p>
+		<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.NAME)">
+			<p>Product name</p>
 
-				<img
-					v-if="sortKey === ProductSortingOption.NAME && sortOrder !== SortOrder.DEFAULT"
-					class="product-table__row-sell-sort-icon"
-					:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
-					src="@/assets/icons/arrow-down.svg"
-				/>
-			</div>
+			<img
+				v-if="sortKey === ProductSortingOption.NAME && sortOrder !== SortOrder.DEFAULT"
+				class="product-table__row-sell-sort-icon"
+				:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
+				src="@/assets/icons/arrow-down.svg"
+			/>
+		</div>
 
-			<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.PRICE)">
-				<p>Prices</p>
+		<div class="product-table__row-sell" @click="tableHeaderSortHandler(ProductSortingOption.PRICE)">
+			<p>Prices</p>
 
-				<img
-					v-if="sortKey === ProductSortingOption.PRICE && sortOrder !== SortOrder.DEFAULT"
-					class="product-table__row-sell-sort-icon"
-					:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
-					src="@/assets/icons/arrow-down.svg"
-				/>
-			</div>
+			<img
+				v-if="sortKey === ProductSortingOption.PRICE && sortOrder !== SortOrder.DEFAULT"
+				class="product-table__row-sell-sort-icon"
+				:class="{ 'descending-order': sortOrder === SortOrder.DESC }"
+				src="@/assets/icons/arrow-down.svg"
+			/>
 		</div>
 	</div>
 </template>

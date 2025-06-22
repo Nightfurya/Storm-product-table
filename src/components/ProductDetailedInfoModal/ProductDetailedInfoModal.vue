@@ -105,10 +105,15 @@ const emit = defineEmits<{
 			}
 
 			@media (max-width: 480px) {
-				height: auto;
 				padding: 12px 0;
-				height: 160px;
-				width: 160px;
+				height: 278px;
+				width: 278px;
+			}
+
+			@media (max-width: 380px) {
+				padding: 8px 0;
+				height: 200px;
+				width: 220px;
 			}
 
 			.image {
@@ -132,6 +137,10 @@ const emit = defineEmits<{
 
 			max-width: 274px;
 
+			@media (max-width: 668px) {
+				max-width: 291px;
+			}
+
 			.title,
 			.features-list,
 			.description {
@@ -145,6 +154,14 @@ const emit = defineEmits<{
 			.features-list {
 				padding-left: 24px;
 				margin: 12px 0;
+			}
+
+			@media (max-width: 480px) {
+				.title,
+				.features-list,
+				.description {
+					font-size: 1rem;
+				}
 			}
 		}
 
@@ -182,7 +199,7 @@ const emit = defineEmits<{
 
 			@media (max-width: 480px) {
 				width: 100%;
-				font-size: 0.75rem;
+				font-size: 1rem;
 			}
 		}
 

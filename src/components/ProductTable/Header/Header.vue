@@ -100,6 +100,10 @@ function tableHeaderSortHandler(key: ProductSortingOption) {
 			&.descending-order {
 				transform: rotate(180deg);
 			}
+
+			@media (max-width: 576px) {
+				right: 8px;
+			}
 		}
 	}
 }

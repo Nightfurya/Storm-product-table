@@ -88,6 +88,7 @@ const isBurgerMenuOpen = ref<boolean>(false);
 <style scoped lang="scss">
 @use '@/assets/styles/_color.vars' as colors;
 @use '@/assets/styles/_mixins' as mixins;
+@use '@/assets/styles/_variables' as vars;
 
 .app-header {
 	@include mixins.flex-row(center, space-between);
@@ -296,7 +297,7 @@ const isBurgerMenuOpen = ref<boolean>(false);
 
 		.burger-menu {
 			position: absolute;
-			z-index: 1;
+			z-index: vars.$navbar-modal-z-index;
 			top: $burger-menu-icon-width + 4px;
 			right: 0;
 

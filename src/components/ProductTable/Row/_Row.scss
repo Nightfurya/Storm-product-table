@@ -16,6 +16,27 @@
 			border-bottom: 1px solid colors.$moon;
 		}
 
+		@media (max-width: 840px) {
+			min-height: 56px;
+			height: auto;
+		}
+
+		@media (max-width: 768px) {
+			grid-template-columns: 70px 144px 1fr 171px;
+		}
+
+		@media (max-width: 660px) {
+			grid-template-columns: 70px 1fr 171px;
+		}
+
+		@media (max-width: 576px) {
+			grid-template-columns: 70px 1fr 100px;
+		}
+
+		@media (max-width: 420px) {
+			grid-template-columns: 1fr;
+		}
+
 		&-sell {
 			@include mixins.flex-row();
 			@include mixins.font-style(0.875rem, colors.$primary-color);
@@ -23,15 +44,41 @@
 			padding: 18px 16px;
 		}
 
+		&-sell:nth-child(1) {
+			@media (max-width: 420px) {
+				display: none;
+			}
+		}
+
+		&-sell:nth-child(2) {
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+
+		&-sell:nth-child(3) {
+			@media (max-width: 660px) {
+				display: none;
+			}
+		}
+
 		&-sell:nth-child(4) {
 			padding: 8px 16px;
 			flex-direction: column;
 			align-items: flex-start;
+
+			@media (max-width: 420px) {
+				justify-content: space-around;
+			}
 		}
 
 		&-sell:last-child {
 			border-left: 1px solid colors.$moon;
 			justify-content: flex-end;
+
+			@media (max-width: 420px) {
+				display: none;
+			}
 		}
 	}
 }

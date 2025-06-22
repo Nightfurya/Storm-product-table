@@ -19,19 +19,25 @@ defineProps<{
 <style scoped lang="scss">
 @use '@/assets/styles/_color.vars' as colors;
 @use '@/assets/styles/_mixins' as mixins;
+@use '@/assets/styles/_variables' as vars;
 
 .modal-overlay {
 	@include mixins.flex-row();
 
 	position: fixed;
 	inset: 0;
-	z-index: 1000;
+	z-index: vars.$detailed-info-modal-z-index;
 
 	width: 100%;
 	height: 100%;
 
 	@media (min-width: 669px) {
 		background: rgba(colors.$black, 0.4);
+	}
+
+	@media (max-width: 668px) {
+		top: vars.$mobile-header-height;
+		height: calc(100% - vars.$mobile-header-height);
 	}
 }
 
@@ -53,19 +59,11 @@ defineProps<{
 
 	@media (max-width: 668px) {
 		width: 100%;
-		height: calc(100% - 148px);
-		max-height: calc(100% - 148px);
+		height: 100%;
+		max-height: 100%;
 		position: absolute;
 		bottom: 0;
 		border-radius: 0px;
-	}
-
-	@media (max-width: 560px) {
-		padding: 16px;
-	}
-
-	@media (max-width: 480px) {
-		padding: 12px;
 	}
 }
 </style>

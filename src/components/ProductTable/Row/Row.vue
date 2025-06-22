@@ -21,7 +21,9 @@ const emit = defineEmits<{
 		<div class="product-table__row-sell">{{ product.quantity }}</div>
 		<div class="product-table__row-sell">
 			<p>{{ product.name }}</p>
-			<p class="product-table__row-sell-subtitle">{{ product.serial }}</p>
+			<p class="product-table__row-sell-subtitle">
+				{{ product.serial }} <span class="product-quantity"> - Qty: {{ product.quantity }}</span>
+			</p>
 		</div>
 		<div class="product-table__row-sell">${{ product.price.toFixed(2) }}</div>
 	</div>
@@ -33,12 +35,28 @@ const emit = defineEmits<{
 @use './_Row';
 
 .product-table__row-sell {
+	@media (max-width: 420px) {
+		font-size: 1rem;
+	}
+
 	&.padding--small {
 		padding: 14px 16px;
 	}
 
 	&-subtitle {
 		@include mixins.font-style(0.75rem, colors.$secondary-color);
+
+		@media (max-width: 420px) {
+			font-size: 1rem;
+		}
+
+		.product-quantity {
+			display: none;
+
+			@media (max-width: 660px) {
+				display: inline-block;
+			}
+		}
 	}
 }
 </style>

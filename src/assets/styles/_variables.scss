@@ -1,3 +1,5 @@
+$extra-wide-mobile-screen-breakpoint: 668px;
+
 $z-index-10: 10;
 $z-index-20: 20;
 $z-index-30: 30;
@@ -6,5 +8,6 @@ $z-index-50: 50;
 
 $detailed-info-modal-z-index: $z-index-10;
 $navbar-modal-z-index: $detailed-info-modal-z-index + 1;
+$sticky-header-z-index: $detailed-info-modal-z-index - 1;
 
 $mobile-header-height: 100px;

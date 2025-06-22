@@ -100,8 +100,17 @@ const isBurgerMenuOpen = ref<boolean>(false);
 		margin: 40px 0 38px;
 	}
 
+	@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
+		position: sticky;
+		top: 0;
+		z-index: vars.$sticky-header-z-index;
+		background-color: colors.$snow;
+		margin: 0;
+		padding: 40px 0 38px;
+	}
+
 	@media (max-width: 480px) {
-		margin-bottom: 18px;
+		padding-bottom: 18px;
 	}
 
 	&__title {
@@ -141,7 +150,7 @@ const isBurgerMenuOpen = ref<boolean>(false);
 				width: 100%;
 			}
 
-			@media (max-width: 668px) {
+			@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 				margin: 0;
 			}
 

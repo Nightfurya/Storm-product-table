@@ -1,13 +1,21 @@
 <script lang="ts" setup>
+import { computed, watch } from 'vue';
+
 import type { Product } from '@/data-models/product';
 
-defineProps<{
+const props = defineProps<{
 	selectedItem: Product | null;
 }>();
+
+const isModalOpen = computed(() => props.selectedItem !== null);
+
+watch(isModalOpen, isOpen => {
+	document.body.classList.toggle('body--modal-open', isOpen);
+});
 </script>
 
 <template>
-	<div v-if="selectedItem" class="modal-overlay">
+	<div v-if="isModalOpen" class="modal-overlay">
 		<div class="modal">
 			<slot name="header"></slot>
 			<slot name="content"></slot>
@@ -31,11 +39,11 @@ defineProps<{
 	width: 100%;
 	height: 100%;
 
-	@media (min-width: 669px) {
+	@media (min-width: calc(vars.$extra-wide-mobile-screen-breakpoint + 1px)) {
 		background: rgba(colors.$black, 0.4);
 	}
 
-	@media (max-width: 668px) {
+	@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 		top: vars.$mobile-header-height;
 		height: calc(100% - vars.$mobile-header-height);
 	}
@@ -57,7 +65,7 @@ defineProps<{
 		padding: 24px;
 	}
 
-	@media (max-width: 668px) {
+	@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 		width: 100%;
 		height: 100%;
 		max-height: 100%;

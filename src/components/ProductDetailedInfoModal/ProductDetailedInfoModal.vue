@@ -56,6 +56,7 @@ const emit = defineEmits<{
 <style scoped lang="scss">
 @use '@/assets/styles/_color.vars' as colors;
 @use '@/assets/styles/_mixins' as mixins;
+@use '@/assets/styles/_variables' as vars;
 
 .product-modal {
 	&__header {
@@ -137,7 +138,7 @@ const emit = defineEmits<{
 
 			max-width: 274px;
 
-			@media (max-width: 668px) {
+			@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 				max-width: 291px;
 			}
 
@@ -165,7 +166,7 @@ const emit = defineEmits<{
 			}
 		}
 
-		@media (max-width: 668px) {
+		@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 			flex-direction: column;
 			align-items: center;
 
@@ -203,7 +204,7 @@ const emit = defineEmits<{
 			}
 		}
 
-		@media (max-width: 668px) {
+		@media (max-width: vars.$extra-wide-mobile-screen-breakpoint) {
 			margin-top: auto;
 		}
 	}

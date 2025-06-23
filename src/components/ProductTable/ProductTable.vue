@@ -2,7 +2,7 @@
 import { ProductSortingOption, SortOrder } from '@/data-models/enums';
 import type { Product } from '@/data-models/product';
 
-import Header from './Header/Header.vue';
+import TableHeader from './Header/Header.vue';
 import Row from './Row/Row.vue';
 
 defineProps<{
@@ -19,7 +19,7 @@ const emit = defineEmits<{
 
 <template>
 	<div class="product-table">
-		<Header :sortKey :sortOrder @sort="emit('sort', $event)" />
+		<TableHeader :sortKey :sortOrder @sort="emit('sort', $event)" />
 
 		<Row v-for="product in products" :key="product.id" :product @select="emit('select', product)" />
 	</div>

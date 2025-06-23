@@ -1,10 +1,11 @@
 # Storm Product Table APP
 
-An interactive, responsive table built with **Vue 3** and **TypeScript**.  
-Includes sorting by table headers: 'Quantity', 'Product Name' or 'Price'.
-Also includes filtering byt 'Product Name' or 'Serial number'.
-Click available on table row in order to show modal with image preview and detailed information about selected item.
-Project designed to be scalable and ready for future API integration.
+An interactive, responsive table built with **Vue 3** and **TypeScript**.
+
+- Includes sorting by table headers: 'Quantity', 'Product Name' or 'Price'.
+- Also includes filtering byt 'Product Name' or 'Serial number'.
+- Click available on table row in order to show modal with image preview and detailed information about selected item.
+- Project designed to be scalable and ready for future API integration.
 
 ---
 
@@ -22,13 +23,13 @@ Project designed to be scalable and ready for future API integration.
 
 1. **Clone the repository**
 
-Open terminal and type:
-git clone https://github.com/your-username/storm-product-table.git
+Open Windows PowerShell:<br />
+git clone https://github.com/Nightfurya/Storm-product-table.git<br />
 cd storm-product-table
 
 2. **Install dependencies**
 
-Next you need to install project dependencies:
+Next you need to install project dependencies:<br />
 Use: 'npm install' or short version: 'npm i'
 
 3. **Start project in dev mode**
@@ -42,7 +43,7 @@ I suggest to use Visual Studio Code for this purpose.
     5. Run command: 'npm run dev'
     6. Open browser and go to 'http://localhost:5173/'
 
-2. **Build project for production**
+4. **Build project for production**
 
    1. Open Windows PowerShell
    2. Open project folder
